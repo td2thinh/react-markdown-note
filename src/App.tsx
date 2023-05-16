@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { NoteLayout } from "./components/NoteLayout"
 import { Note } from "./components/Note"
 import { EditNote } from "./components/EditNote"
+import './App.scss'
 
 export type Note = {
   id: string

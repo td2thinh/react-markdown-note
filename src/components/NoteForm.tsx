@@ -53,6 +53,12 @@ export const NoteForm = ({ onSubmit, onAddTag, availableTags, title = "", markdo
                         <Form.Group controlId='tags'>
                             <Form.Label>Tags</Form.Label>
                             <CreatableReactSelect
+                                styles={{
+                                    control: (provided) => ({
+                                        ...provided,
+                                        backgroundColor: '#fff8e6',
+                                    }),
+                                }}
                                 onCreateOption={label => {
                                     const newTag = {
                                         id: uuidv4(),

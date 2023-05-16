@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Tag, Note } from "../App";
 import { useMemo, useState } from "react";
 import ReactSelect from "react-select";
-import styles from "../NoteList.modules.css?inline";
+import styles from "../NoteList.modules.css";
 
 type NoteListProp = {
     availableTags: Tag[]
@@ -63,6 +63,12 @@ export const NoteList = ({ availableTags, notes, deleteTag, updateTag }: NoteLis
                     <Form.Group controlId='tags'>
                         <Form.Label>Tags</Form.Label>
                         <ReactSelect
+                            styles={{
+                                control: (provided) => ({
+                                    ...provided,
+                                    backgroundColor: '#fff8e6',
+                                }),
+                            }}
                             value={selectedTags.map(tag => {
                                 return {
                                     value: tag.id,
@@ -109,7 +115,7 @@ const NoteCard = ({ id, title, tags, markdown }: Note) => {
     }
 
     return (
-        <Card as={Link} to={`${id}`} className={`h-100 text-reset text-decoration-none ${styles}`}>
+        <Card as={Link} to={`${id}`} className={`h-100 text-reset text-decoration-none ${styles.card}`}>
             <Card.Body>
                 <Stack gap={2} className="align-items-center justify-content-center h-100">
                     <span className="fs-5">
